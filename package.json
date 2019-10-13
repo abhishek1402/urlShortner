@@ -1,0 +1,41 @@
+{
+  "name": "tsnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch & nodemon dist",
+    "test": "tsc && mocha dist/**/*.spec.js",
+    "lint": "eslint src --ext ts",
+    "tsc": "tsc",
+    "debug": "tsc --watch & nodemon --inspect=0.0.0.0:9229 dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.21",
+    "bcrypt": "^3.0.5",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "express-joi-validator": "^2.0.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "newman": "^4.4.1",
+    "passport": "^0.4.0",
+    "swagger-ui-express": "^4.0.2",
+    "tslint": "^5.12.1",
+    "typescript-eslint-parser": "^22.0.0",
+    "randexp": "^0.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-plugin-import": "^2.16.0",
+    "tslint-config-airbnb": "^5.11.1",
+    "typescript": "^3.3.1"
+  }
+}

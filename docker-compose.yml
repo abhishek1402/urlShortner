@@ -1,0 +1,31 @@
+version: '3.5'
+
+services:
+  mysql: 
+    container_name: shotner-mysql
+    image: mysql:5.7
+    volumes:
+      - ~/datadir/mysql:/var/lib/mysql
+    ports:
+      - 4300:3306
+      - 4400:33060
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: unless-stopped
+    networks:
+      -  shotner_network
+  backend: 
+    container_name: shotner-backend
+    build: .
+    volumes: 
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports: 
+      - "8080:8080"
+    links:
+      - mysql
+    networks:
+      - shotner_network
+networks:
+  shotner_network:
+    driver: bridge  
